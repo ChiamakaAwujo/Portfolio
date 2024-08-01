@@ -1,5 +1,5 @@
 -- Exploratory Data Analysis
--- Using Data Set: https://www.kaggle.com/datasets/swaptr/layoffs-2022 (Cleaned Version)
+-- Using Data Set: https://www.kaggle.com/datasets/swaptr/layoffs-2022 (Cleaned Version from Portfolio Project 1)
 
 SELECT * 
 FROM layoffs_staging;
