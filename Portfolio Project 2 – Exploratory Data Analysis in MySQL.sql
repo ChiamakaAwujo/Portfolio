@@ -49,7 +49,7 @@ LIMIT 10;
 -- Transportation indsutry had the most number of layoffs, this is mainly due to the massive amount of layoffs from Tesla
 -- However there are many null values in this industry so, this finding may not be the most accurate
 
--- Other industries with large layoff numbers or the Others catagory and Retail 
+-- Other industries with large layoff numbers are the Others catagory and Retail 
 ---- In the Others industry, this is due to large corporations such as Microsoft and SAP 
 ---- In the Retail industry, the layoffs were more evenly spread across multiple companies
 
