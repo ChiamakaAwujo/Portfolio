@@ -111,6 +111,8 @@ estat ic
 
 
 *AR Models + AIC
+*Reject the null of no autocorrelation at the 5% level if serial correlation p value<0.05
+
 *AR(1) – Reject the null 
 regress dunemp_JPN l(1/1).dunemp_JPN if osp == 0
 estat bgodfrey, lag(4)
@@ -147,6 +149,7 @@ gen abu1 = abs(u1)
 gen lowf1 = f1-2.37*sef1
 gen highf1 = f1+2.37*sef1 
 list qdate  dunemp_JPN lowf1 highf1 u1 u1_sqr abu1 if qdate >= tq(2016q1)
+
 *Preferred model 2: ARDL (4,1)
 regress dunemp_JPN l(1/4).dunemp_JPN l(1).dinf_JP if osp == 0
 predict f2
@@ -157,6 +160,7 @@ gen abu2 = abs(u2)
 gen lowf2 = f2-2.37*sef2
 gen highf2 = f2+2.37*sef2
 list qdate  dunemp_JPN lowf2 highf2 u2 u2_sqr abu2 if qdate >= tq(2016q1)
+
 *Random model: AR(2)
 regress dunemp_JPN l(1/2).dunemp_JPN if osp == 0
 predict f3
@@ -209,4 +213,5 @@ list qdate f3 lowf3 highf3 u3 u3_sqr abu3 if qdate >= tq(2016q1)
 *Table of the absolute value of the errors and errors squared of all three forecasts 
 tabstat abu1 abu2 abu3 u1_sqr u2_sqr u3_sqr if qdate >= tq(2016q1), stat(mean)
 
+*To figure out the most accurate model, calculating the Root Mean Squared Error of the forecasts
 *Based on the RMSE the most accurate model is the AR(2) model
